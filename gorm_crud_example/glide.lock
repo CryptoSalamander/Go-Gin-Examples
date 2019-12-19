@@ -1,0 +1,22 @@
+hash: 178409ee2899c260d3b47dfd118597b20e365d76e52f79f1822cc986849b1df4
+updated: 2019-12-19T15:30:13.455407+09:00
+imports:
+- name: github.com/gin-gonic/gin
+  version: 15ced05c5316609bce5b43389f8e3f06102a8b18
+- name: github.com/go-sql-driver/mysql
+  version: 72cd26f257d44c1114970e19afddcd812016007e
+- name: github.com/google/uuid
+  version: 0cd6bf5da1e1c83f8b45653022c74f71af0538a4
+- name: github.com/jinzhu/gorm
+  version: 81c17a7e2529c59efc4e74c5b32c1fb71fb12fa2
+  subpackages:
+  - dialects/mysql
+- name: github.com/jinzhu/inflection
+  version: f5c5f50e6090ae76a29240b61ae2a90dd810112e
+- name: google.golang.org/appengine
+  version: 16bce7d3dc4e458f2f6f56a1349cbbfcdc8a8fdf
+  subpackages:
+  - cloudsql
+- name: gopkg.in/go-playground/validator.v8
+  version: 691a5f5f25701d0a22785c982db4f22bfac47931
+testImports: []
