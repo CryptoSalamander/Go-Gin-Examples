@@ -6,7 +6,8 @@ import (
 	"github.com/cryptosalamander/gorm_crud_example/helpers"
 	"github.com/cryptosalamander/gorm_crud_example/models"
 	"github.com/cryptosalamander/gorm_crud_example/repositories"
-	"github.com/cryptosalamander/gorm_crud_example/services"
+
+	//"github.com/cryptosalamander/gorm_crud_example/services"
 	"github.com/gin-gonic/gin"
 )
 
@@ -44,5 +45,7 @@ func SetupRoutes(contactRepository *repositories.ContactRepository) *gin.Engine 
 
 		context.JSON(code, response)
 	})
+
+	return route
 
 }
