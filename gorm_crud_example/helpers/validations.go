@@ -3,7 +3,7 @@ package helpers
 import (
 	"github.com/cryptosalamander/gorm_crud_example/dtos"
 	"github.com/cryptosalamander/gorm_crud_example/langs"
-	"github.com/go-playground/validator"
+	"gopkg.in/go-playground/validator.v8"
 )
 
 func GenerateValidationResponse(err error) (response dtos.ValidationResponse) {
@@ -11,15 +11,20 @@ func GenerateValidationResponse(err error) (response dtos.ValidationResponse) {
 
 	var validations []dtos.Validation
 
-	validationErrors := err.(validator.ValidationErrors)
+	// get validation errors
+	validationError := err.(validator.ValidationErrors)
 
-	for _, value := range validationErrors {
-		field, rule := value.Field, value.Tag
-
+	for _, value := range validationError {
+		// get field & rule (tag)
+		field, rule := value.Field(), value.Tag()
+		// create validation object
 		validation := dtos.Validation{Field: field, Message: langs.GenerateValidationMessage(field, rule)}
+
+		// add validation object to validations
 		validations = append(validations, validation)
 	}
 
+	// set Validations response
 	response.Validations = validations
 
 	return response
